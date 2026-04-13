@@ -8,7 +8,6 @@ import (
 	"os"
 	"time"
 
-	"AutoGoogleDocs/pkg/ai"
 	"AutoGoogleDocs/pkg/browser"
 	"AutoGoogleDocs/pkg/parser"
 )
@@ -32,13 +31,14 @@ func main() {
 	defer b.MustClose()
 
 	parser.Login(page, b, gmail, pass)
+	time.Sleep(3 * time.Second)
 	page.Reload()
-	test := parser.Start_quiz(page, line)
-	answers, err := ai.AskAI(test)
-	parser.Solve_quiz(page, answers)
+	parser.Start_quiz(page, line)
 	log.Println("Waiting for timer")
 	randomminutes := rand.IntN(5) + 5
 	randomsecundes := rand.IntN(61)
 	time.Sleep(time.Duration(randomminutes)*time.Minute + time.Duration(randomsecundes)*time.Second)
 	log.Println("Finishing up...")
+	page.MustElementsX(`//div[@role="button"]`)[0].MustClick()
+	log.Println("Finish!")
 }
