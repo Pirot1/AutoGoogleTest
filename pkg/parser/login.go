@@ -10,9 +10,6 @@ import (
 )
 
 func Login(page *rod.Page, b *rod.Browser, gmail string, pass string) {
-	// test
-	gmail = "narbekd1@gmail.com"
-	pass = "A0787040398a!"
 	// Start loging in
 	el := page.MustElementX(`//div[@class="kesdnc"]/a[1]`)
 	page = b.MustPage(*el.MustAttribute("href"))
