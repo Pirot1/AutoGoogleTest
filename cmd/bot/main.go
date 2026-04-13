@@ -22,12 +22,8 @@ func main() {
 	log.SetOutput(multi)
 	log.SetFlags(log.Ltime)
 	// Main
-	url, line, gmail, pass := browser.Autorisation() // get user's information
-	//test
-	url = "https://docs.google.com/forms/d/e/1FAIpQLSdnyeXX3I_pww1SUTG44Rv3pt38eOvSPKIsGQwqBy8KCDaCBQ/viewform?usp=header"
-	//url = "https://docs.google.com/forms/d/e/1FAIpQLSeGGTTCvJfabnBRahbfIGCCfHX1KAbZQgPipwPGRjpszCgHew/viewform"
-
-	page, b := browser.Init(url, false) // go to the test
+	url, line, gmail, pass := browser.Autorisation()
+	page, b := browser.Init(url, false)
 	defer b.MustClose()
 
 	parser.Login(page, b, gmail, pass)
