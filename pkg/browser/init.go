@@ -39,7 +39,7 @@ func Init(site string, head bool) (page *rod.Page, browser *rod.Browser) {
 	}
 	browser = rod.New().ControlURL(url).MustConnect().NoDefaultDevice()
 	page = stealth.MustPage(browser)
-	//page.MustSetViewport(1920, 1080, 1, false)
+	page.MustSetViewport(1920, 1080, 1, false)
 	page.MustSetUserAgent(&proto.NetworkSetUserAgentOverride{
 		UserAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
 	})
