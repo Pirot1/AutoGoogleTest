@@ -23,7 +23,7 @@ func main() {
 	log.SetFlags(log.Ltime)
 	// Main
 	url, line, gmail, pass := browser.Autorisation()
-	page, b := browser.Init(url, false)
+	page, b := browser.Init(url, true)
 	defer b.MustClose()
 
 	parser.Login(page, b, gmail, pass)

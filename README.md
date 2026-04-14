@@ -5,9 +5,9 @@
 ![Browser Automation](https://img.shields.io/badge/go--rod-v0.116-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
----
 
-`A robust automation tool designed to solve Google Forms by leveraging local AI (Ollama). This script automatically parses questions, analyzes them using an AI model, and selects the correct answers with high precision.`
+
+A robust automation tool designed to solve Google Forms by leveraging local AI (Ollama). This script automatically parses questions, analyzes them using an AI model, and selects the correct answers with high precision.
 
 ---
 
